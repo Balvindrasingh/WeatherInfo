@@ -1,0 +1,260 @@
+body {
+    
+    background-color: #f4f4f4;
+    color: #333333;
+    margin-top: 0; 
+    padding-top: 70px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    min-height: 100vh; 
+    background-image: url('../images/default.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 100px;
+    font-style: normal;
+}
+
+#logo {
+    height: 50px; 
+    margin-right: 20px; 
+    background:whitesmoke;
+    margin-right: 30px;
+}
+
+
+
+
+
+#cityInput {
+    display: block;
+    margin: 20px auto;
+    margin-top: 200px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+        background-color: #F3B664;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 1.5em;
+        text-align: center;
+        width: 100%;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+        margin-bottom: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 100px;
+        font-style: normal;
+    }
+    
+h1 {
+    line-height: 70px; /* Align the text vertically in the header */
+    margin: 0; /* Remove default margin */
+}
+
+
+
+#weather, #forecast, #air-quality {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+#air-quality {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.weather-item, .forecast-item {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.weather-item {
+    margin-bottom: 20px;
+}
+
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #e8771aee;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 100px;
+    font-style: normal;
+   
+
+}
+
+button:hover {
+    background-color: #FF9800;
+}
+
+/* Dynamic Backgrounds */
+body[data-weather="Clear"] {
+    background-image: url('../images/sun1.svg');
+}
+
+body[data-weather="Clouds"] {
+    background-image: url('../images/cloud.svg');
+}
+
+body[data-weather="Rain"] {
+    background-image: url('../images/rain.svg');
+}
+
+body[data-weather="Snow"] {
+    background-image: url('../images/snow.svg');
+}
+
+body[data-weather="Haze"] {
+    background-image: url('../images/haze.svg');
+}
+
+body[data-weather="Mist"] {
+    background-image: url('../images/mist.svg');
+}
+
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+/*  Buttons */
+button {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #cityInput {
+        width: 70%;
+    }
+
+    #weather, #forecast, #air-quality {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #cityInput {
+        width: 80%;
+    }
+
+    .forecast-item {
+        width: 100%;
+    }
+}
+
+/*  visual cues for interactivity */
+button:focus,
+button:hover {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 190, 11, 0.5);
+}
+
+/* Fine-tune forecast items */
+.forecast-item {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.forecast-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+#forecast h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+/* Image Styling */
+img {
+    max-width: 100%; /* Ensure images are not larger than their container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners for images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Consistent shadow with other elements */
+    margin-top: 10px; /* Space above images */
+}
+
+/* Weather Item Image Styling */
+.weather-item img {
+    max-width: 50%; /* Smaller max width for images in weather items */
+    margin: 0 auto; /* Center images in their container */
+    display: block; /* Treat images as block elements to allow margin auto to work */
+}
+
+/* Forecast Item Image Styling */
+.forecast-item img {
+    max-width: 70%; /* Slightly larger images in forecast items */
+    margin: 10px auto; /* More space around images */
+}
+
+/* Enhancements for background images */
+body[data-weather="Clear"],
+body[data-weather="Clouds"],
+body[data-weather="Rain"],
+body[data-weather="Snow"],
+body[data-weather="Haze"],
+body[data-weather="Mist"] {
+    background-position: center; 
+    background-attachment: fixed; 
+}
+
+
+@media (max-width: 768px) {
+    .weather-item img,
+    .forecast-item img {
+        max-width: 80%; /* Larger images for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-item img,
+    .forecast-item img {
+        max-width: 90%; /* Almost full-width images for very small screens */
+    }
+}
